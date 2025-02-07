@@ -1,0 +1,25 @@
+name: Test
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  job_one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Echo from anchored steps
+        run: echo "Hello from anchored steps!"
+      - name: Additional step in job_one
+        run: echo "Hello from job_one!"
+
+  job_two:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Echo from anchored steps
+        run: echo "Hello from anchored steps!"
+      - name: Additional step in job_two
+        run: echo "Hello from job_two!"
